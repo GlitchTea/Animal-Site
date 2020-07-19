@@ -1,0 +1,195 @@
+/* Affects entire document */
+html, body {
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+    display: table;
+    margin: auto;
+  }
+  
+
+
+body {
+	background-color: #000;
+	letter-spacing: .2vw;
+    font-size: 1.5vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: table-cell;
+    vertical-align: middle;
+	
+}
+
+.Navbar {
+	display: block;
+	background-color: #f0f1f0;
+	position: fixed; 
+	top: 0; 
+	width: 100%; 
+	z-index: 1; 
+}
+
+.Navbar a {
+	float: left; 
+	display: block; 
+	color: #000; 
+	padding: .75vw 1vw; 
+	text-decoration: none; 
+	font-family: 'Rowdies', cursive;
+	font-size: 1.5vw; 
+	text-align: center; 
+	position: relative;
+	-webkit-animation: movenavText 5.75s;
+    animation: movenavText 5.75s;
+	letter-spacing: .2vw;
+}
+
+
+
+.Navbar a:hover {
+	background-color: #fff; 
+	color: black; 
+	font-weight: bold; 
+	cursor: pointer;
+	-webkit-transition-duration: 1s; 
+	transition-duration: 1s;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+
+* { 
+    box-sizing: border-box;
+}
+
+.Column_1 {
+	float: left;  
+	width: 50%; 
+	padding: 10px; 
+	padding-top: 3%; 
+	height: 400px; 
+	background-color: #fff; 
+}
+
+.Column_2 {
+	float: left;
+	width: 50%;
+	padding: 10px;
+	padding-top: 1.9%;
+	height: 400px;
+	background-color: #000;
+}
+
+
+.Row:after { 
+	content: ""; 
+	display: table; 
+	clear: both; 
+}
+
+
+h1 {
+	font-family:  'Rowdies', cursive;
+	text-align: center;
+	margin-top: 3%; 
+	color: #1a1a1a;
+}
+
+p {
+	font-family: 'Volkhov', serif;
+	text-align: justify;
+	letter-spacing: 1px; 
+	font-size: 17px;
+	padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+center {
+	font-family: 'Volkhov', serif;
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+  
+
+  .form-popup {
+	border: 3px solid #f0f1f0;
+	z-index: 8;
+	display: none;
+	position: fixed;
+	bottom: 6px;
+	right: 6px;
+  }
+  
+ 
+  .form-container {
+	max-width: 49vw;
+	padding: 9px;
+	background-color: white;
+  }
+  
+
+  .form-container input[type=text], .form-container input[type=password] {
+	width: 100%;
+	padding: .93vw;
+	margin: .6vw 0 .6vw 0;
+	border: none;
+	background: Gainsboro;
+	font-family: Helvetica, Avant Garde;
+	font-size: 1vw; 
+  }
+  
+ 
+  .form-container .btn {
+	background-color: white;
+	color: black;
+	border-color: black;
+	margin-bottom:1vh;
+  }
+
+  .form-container .cancel {
+	background-color: black;
+	color: white;
+	border-color: gray;
+  }
+  
+ 
+  button {
+	font-family: 'Rowdies', cursive;
+	letter-spacing: .3vw; 
+	font-size: 1.5vw;
+	font-weight: bold;
+	padding: 1.5vw 1.5vw;
+	border-style: solid;
+	cursor: pointer;
+	width: 100%;
+	height: auto;
+  }
+  
+  .form-container .cancel:hover{
+	color: white;
+	background-color: darkred;
+	-webkit-transition-duration: 1s; 
+	transition-duration: 1s;
+	border-style: solid;
+	border-color: black;
+  }	
+
+
+footer {
+    background-color: #000;
+    color: #fff;
+}

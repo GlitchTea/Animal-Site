@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nightflyers.com</title>
+    <meta charset="utf-8" lang="en">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="js/animations.js"></script>
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script>
+        const circle = new mojs.Shape({
+            left:0,
+            top:0,
+            strokeWidth: 8,
+            fill:'none',
+            radius:80,
+            scale:{0:1},
+            opacity:{10:0},
+            shape:'circle',
+            // shape:'line',
+            // shape:'rect',
+            // shape:'polygon',
+            // shape:'curve',
+            // shape:'zigzag',
+            // shape:'cross',
+            // shape:'equal',
+            stroke:'black',
+            strokeWidth:8,
+            fill:'none',
+            duration:500,
+        });
+
+        const burst = new mojs.Burst({
+            count:10,
+            left:0,
+            top:0,
+            children:{
+                shape:['circle', 'rect', 'curve', 'polygon'],
+                fill:['black', 'white', 'darkgray', 'black'],
+                degreeShift:'rand(-360, 360)',
+                delay: 'stagger(0, 30)'
+            },
+            duration:400
+        });
+
+        const bang = new mojs.Burst({
+            left:0,
+            top:0,
+            radius:{2:40},
+            angle:45,
+            count:8,
+            children:{
+                radius:8,
+                fill:'white',
+                scale:{1:0, easing:'sin.in'},
+                pathScale:[0.7, null],
+                duration:[500, 700],
+                degreeShift:[13, null],
+            }
+        });
+
+        document.onclick = (e) => {
+            const position = {
+                x: e.pageX,
+                y: e.pageY
+            }
+
+            circle.tune(position);
+            circle.replay();
+            burst.tune(position);
+            burst.replay();
+            bang.tune(position);
+            bang.replay();
+        }
+    </script>
+    <!-- Navbar -->
+        <div class="Navbar">
+            <a href="#About">About</a> 
+            <a href="#Fact">Trivia</a>
+            <a href="#News">Newsletter</a>
+            <a class="active" href="#about" style="float:right;">Nightflyers.com</a>
+        </div>
+
+    <!-- Close Form -->
+<div class="btn cancel" onclick="closeForm()">
+        </div>
+    
+    <!-- About section -->
+        <div class="Row" id="About"> 
+            <div class="Column_2"> <!-- Left column -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5FK9tWT5pA4" 
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+      
+            <div class="Column_1"> <!-- Right column -->
+                <h1>About Us</h2>
+                    <p>The Nightflyers was a website created to spreading out information on Bats and other 
+                        nightly creatures. Our hope is to expand the knowlodge of creatures less spoken about or
+                        treated unfairly due to misinformation. We are at the beginning of our stage but just know 
+                        we are passionate and hope to spread that with others. If you would like to keep up with us
+                        and show support, sign up for our newsletter below. And remember the Nightflyers welcome you
+                        always!
+                    </p>
+            </div>
+        </div>
+    
+        <div class="Row" id="Fact">
+            <div class="Column_1"> <!-- Left column -->
+                <h1>Bat Trivia</h1>
+                    <p>
+                    The bat is a creature that is highly adaptable. Research shows that there are very few places in the world where they don’t reside. They typically will reside in caves where they have access to water, 
+                    safe places to hide from predators during the day, and plenty of food. The body of the bat is one that has fascinated researchers for centuries. The limbs of the bat usually feature two sharp claws. 
+                     Only a very small fraction of bats in the world actually survive off of the blood of other animals. It is very difficult to location remains of bat fossils. This is due to the fact that they are so light boned. 
+                     Bat Echolocation Most species of bats rely on echolocation to help them find prey. To hear what they sound like click the photo.
+                    </p>
+            </div>
+            
+            <div class="Column_2"> <!-- Right column -->
+             <  <script>
+                function play(){
+                     var audio = document.getElementById("audio");
+                     audio.play();
+                               }
+                 </script>
+              
+              <img src="img/Bat.jpg" value="PLAY"  onclick="play()">
+              <audio id="audio" src="media/Sound.wav" ></audio>
+               
+            </div>
+            
+        </div>
+</div>
+
+    <!-- Contact section -->
+        <div id="News"> 
+            <button onclick="openForm()" class=""> Our Newsletter </button>
+            <div class="form-popup" id="myForm">
+                            <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container">   
+                            <h1>Contact</h1> 
+                                <label for="name">Name:</label>
+                                    <input type="text" placeholder="Type your name here" name="name" required>
+                                <label for="email">Email:</label>
+                                    <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
+                                    
+                    <button type="submit" class="btn">SUBMIT</button>
+                     <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>      
+                                
+                        </form>
+                </div>
+        </div>
+
+
+
+
+
+
+<footer>
+    <p>
+        <center>&copy 2020 Nightflyers.com</center>
+    </p>
+
+</footer>
+
+</body>
+
+</html>
