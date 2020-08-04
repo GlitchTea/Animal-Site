@@ -84,6 +84,7 @@
         <div class="Navbar">
             <a href="#About">About</a> 
             <a href="#Fact">Trivia</a>
+            <a href="#Contact">Contact</a>
             <a href="#News">Newsletter</a>
             <a class="active" href="#about" style="float:right;">Nightflyers.com</a>
         </div>
@@ -123,7 +124,7 @@
             </div>
             
             <div class="Column_2"> <!-- Right column -->
-             <  <script>
+               <script>
                 function play(){
                      var audio = document.getElementById("audio");
                      audio.play();
@@ -137,13 +138,30 @@
             
         </div>
 </div>
+<div id="Contact" class="container">
+    <form action="action_page.php">
+        <h1>Contact</h1> 
+  
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+  
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+  
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+  
+      <input type="submit" value="Submit">
+  
+    </form>
+  </div>
 
     <!-- Contact section -->
         <div id="News"> 
             <button onclick="openForm()" class=""> Our Newsletter </button>
             <div class="form-popup" id="myForm">
                             <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container">   
-                            <h1>Contact</h1> 
+                            <h1>Subscribe</h1> 
                                 <label for="name">Name:</label>
                                     <input type="text" placeholder="Type your name here" name="name" required>
                                 <label for="email">Email:</label>
